@@ -86,19 +86,41 @@
       cursor: pointer;
       outline: none;
 
+      @include media('md') {
+        width: 55px;
+        height: 30px;
+        padding: 3px;
+        gap: 8px;
+      }
+
       img {
         width: 30px;
         height: 30px;
         border-radius: 50%;
+
+        @include media('md') {
+          width: 24px;
+          height: 24px;
+        }
       }
 
       .arrow {
-        font-size: 14px;
         transition: transform 0.3s ease;
+
+        svg {
+          @include media('md') {
+            width: 8px;
+            height: 8px;
+          }
+        }
       }
 
       &.open .arrow {
         transform: rotate(180deg) translateY(2px);
+
+        @include media('md') {
+          transform: rotate(180deg) translateY(-1px);
+        }
       }
     }
 

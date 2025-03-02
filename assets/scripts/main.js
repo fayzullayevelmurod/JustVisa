@@ -62,32 +62,58 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 // select
-document.addEventListener("DOMContentLoaded", () => {
-  const selectedLanguage = document.querySelector(".selected-language");
+// flag
+// document.addEventListener("DOMContentLoaded", () => {
+//   const selectedLanguage = document.querySelector(".selected-language");
+//   const languageList = document.querySelector(".language-list");
+
+//   selectedLanguage.addEventListener("click", () => {
+//     languageList.classList.toggle("show");
+//     selectedLanguage.classList.toggle("open");
+//   });
+
+//   document.querySelectorAll(".language-list li").forEach(item => {
+//     item.addEventListener("click", () => {
+//       const selectedImg = item.querySelector("img").src;
+//       selectedLanguage.querySelector("img").src = selectedImg;
+//       languageList.classList.remove("show");
+//       selectedLanguage.classList.remove("open");
+//     });
+//   });
+
+//   // Click outside to close
+//   document.addEventListener("click", (e) => {
+//     if (!selectedLanguage.contains(e.target) && !languageList.contains(e.target)) {
+//       languageList.classList.remove("show");
+//       selectedLanguage.classList.remove("open");
+//     }
+//   });
+// });
+
+document.addEventListener("DOMContentLoaded", function () {
+  const selectBtn = document.querySelector(".selected-language");
   const languageList = document.querySelector(".language-list");
+  const languageSelect = document.querySelector(".language-select");
 
-  selectedLanguage.addEventListener("click", () => {
-    languageList.classList.toggle("show");
-    selectedLanguage.classList.toggle("open");
+  selectBtn.addEventListener("click", function () {
+      languageSelect.classList.toggle("open");
   });
 
-  document.querySelectorAll(".language-list li").forEach(item => {
-    item.addEventListener("click", () => {
-      const selectedImg = item.querySelector("img").src;
-      selectedLanguage.querySelector("img").src = selectedImg;
-      languageList.classList.remove("show");
-      selectedLanguage.classList.remove("open");
-    });
+  languageList.addEventListener("click", function (event) {
+      if (event.target.tagName === "LI") {
+          selectBtn.innerHTML = event.target.textContent + ' <span class="arrow"><svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M10.25 4L6 8.25L1.75 4" stroke="#007BFF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>';
+          languageSelect.classList.remove("open");
+      }
   });
 
-  // Click outside to close
-  document.addEventListener("click", (e) => {
-    if (!selectedLanguage.contains(e.target) && !languageList.contains(e.target)) {
-      languageList.classList.remove("show");
-      selectedLanguage.classList.remove("open");
-    }
+  document.addEventListener("click", function (event) {
+      if (!languageSelect.contains(event.target)) {
+          languageSelect.classList.remove("open");
+      }
   });
 });
+
+
 
 // select
 

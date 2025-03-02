@@ -1,6 +1,5 @@
 .header {
   padding-top: 50px;
-  padding-bottom: 500px;
 
   @include media('md') {
     padding-top: 20px;
@@ -57,12 +56,16 @@
     align-items: center;
     gap: 40px;
 
+    @include media('md') {
+      display: none;
+    }
+
     a {
       font-weight: 500;
       font-size: 18px;
       line-height: 28px;
       letter-spacing: -2%;
-      color: #1F1F1F;
+      color: $color-black;
     }
   }
 

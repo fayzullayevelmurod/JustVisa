@@ -22,6 +22,7 @@
   }
 
   &_in {
+    width: 100%;
     padding: 60px;
     border-radius: 24px;
     background: $color-white;
@@ -29,6 +30,10 @@
     @include media('md') {
       padding: 24px 10px;
     }
+  }
+
+  .container {
+    width: 100%;
   }
 
   .form-container_wrapper {
@@ -149,29 +154,37 @@
 
 .contact_request {
   display: none;
+  align-items: center;
+  height: 860px;
   padding: 80px 0;
   background: $color-blue;
 
   @include media('md') {
     padding: 40px 0;
+    height: 577px;
   }
 
   &.active {
-    display: block;
+    display: flex;
+  }
+
+  .container {
+    width: 100%;
   }
 
   &_in {
+    width: 100%;
     background: $color-white;
     border-radius: 24px;
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 60px;
-    padding: 195px 24px;
+    padding: 215px 24px;
 
     @include media('md') {
       gap: 24px;
-      padding: 161px 20px;
+      padding: 166px 20px;
     }
   }
 

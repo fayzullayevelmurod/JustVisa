@@ -45,17 +45,17 @@ document.addEventListener("DOMContentLoaded", function () {
   submitButton.addEventListener("click", function (event) {
       event.preventDefault();
       contactForm.style.display = "none";
-      successMessage.style.display = "block";
+      successMessage.style.display = "flex";
 
       setTimeout(() => {
           successMessage.style.display = "none";
-          contactForm.style.display = "block";
-      }, 3000);
+          contactForm.style.display = "flex";
+      }, 13000);
   });
 
   successMessageClose.addEventListener("click", function () {
       successMessage.style.display = "none";
-      contactForm.style.display = "block";
+      contactForm.style.display = "flex";
   });
 });
 // form

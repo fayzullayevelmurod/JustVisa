@@ -19,11 +19,11 @@ menu_close.addEventListener('click', () => {
 document.addEventListener("DOMContentLoaded", function () {
   const tabs = document.querySelectorAll(".tab");
   const forms = document.querySelectorAll(".form");
-  const submitButton = document.querySelector("#submit-button");
-  const initialForm = document.querySelector("#email-form"); // Asosiy forma
-  const successForm = document.querySelector("#success-message"); // Yangi blok
+  const submitButton = document.querySelector(".submit-btn");
+  const contactForm = document.querySelector(".contact-form");
+  const successMessage = document.querySelector(".success-message");
+  const successMessageClose = document.querySelector(".contact_request_close");
 
-  // Tabsni boshqarish
   tabs.forEach(tab => {
       tab.addEventListener("click", function () {
           tabs.forEach(t => t.classList.remove("active"));
@@ -34,20 +34,22 @@ document.addEventListener("DOMContentLoaded", function () {
       });
   });
 
-  // Formani almashtirish
-  submitButton.addEventListener("click", function (e) {
-      e.preventDefault(); // Formani yuborishning oldini olamiz
-      initialForm.classList.remove("active");
-      successForm.classList.add("active");
+  submitButton.addEventListener("click", function (event) {
+      event.preventDefault();
+      contactForm.style.display = "none";
+      successMessage.style.display = "block";
 
-      // 3 soniyadan keyin formani qayta tiklash
       setTimeout(() => {
-          successForm.classList.remove("active");
-          initialForm.classList.add("active");
+          successMessage.style.display = "none";
+          contactForm.style.display = "block";
       }, 3000);
   });
-});
 
+  successMessageClose.addEventListener("click", function () {
+      successMessage.style.display = "none";
+      contactForm.style.display = "block";
+  });
+});
 // form
 
 
@@ -98,17 +100,17 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     // Input validation
-    textInputs.forEach(input => {
-      input.addEventListener("input", function () {
-          if (/\d/.test(this.value)) {  // Agar raqam bo‘lsa
-              this.style.border = "2px solid red";
-              this.nextElementSibling.textContent = "Faqat harflar kiritish mumkin!";
-          } else {
-              this.style.border = "2px solid #ccc"; // Normal holatga qaytarish
-              this.nextElementSibling.textContent = "";
-          }
-      });
-  });
+  //   textInputs.forEach(input => {
+  //     input.addEventListener("input", function () {
+  //         if (/\d/.test(this.value)) {  // Agar raqam bo‘lsa
+  //             this.style.border = "2px solid red";
+  //             this.nextElementSibling.textContent = "Faqat harflar kiritish mumkin!";
+  //         } else {
+  //             this.style.border = "2px solid #ccc"; // Normal holatga qaytarish
+  //             this.nextElementSibling.textContent = "";
+  //         }
+  //     });
+  // });
 
 let swiper = new Swiper(".clientSwiper", {
   slidesPerView: 1,

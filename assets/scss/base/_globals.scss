@@ -117,3 +117,31 @@ p, h1, h2, h3, h4, h5, h6 {
     background: #007BFF;
   }
 }
+
+.main_input {
+  height: 70px;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 30px;
+  color: #D2D2D2;
+  padding: 20px 32px;
+  border: 1px solid #E6F2FF;
+  background: #F2F8FF;
+  border-radius: 12px;
+
+  @include media('md') {
+    height: 60px;
+    font-size: 15px;
+    line-height: 23px;
+    padding: 18px 24px;
+  }
+
+  &:focus {
+    color: $color-black;
+    border: 1px solid $color-blue;
+  }
+
+  &:hover {
+    border: 1px solid #80BDFF;
+  }
+}

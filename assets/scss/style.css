@@ -1195,6 +1195,46 @@ p, h1, h2, h3, h4, h5, h6 {
   }
 }
 
+.contact_request {
+  display: none;
+  padding: 80px 0;
+  background: #007BFF;
+}
+@media (max-width: 768px) {
+  .contact_request {
+    padding: 40px 0;
+  }
+}
+.contact_request_in {
+  background: #FFFFFF;
+  border-radius: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 60px;
+  padding: 195px 24px;
+}
+@media (max-width: 768px) {
+  .contact_request_in {
+    gap: 24px;
+    padding: 161px 20px;
+  }
+}
+.contact_request h6 {
+  font-weight: 800;
+  font-size: 70px;
+  line-height: 70px;
+  letter-spacing: -2%;
+  text-align: center;
+  color: #1F1F1F;
+}
+@media (max-width: 768px) {
+  .contact_request h6 {
+    font-size: 34px;
+    line-height: 40px;
+  }
+}
+
 .footer {
   background: #1F1F1F;
   padding: 40px 0;

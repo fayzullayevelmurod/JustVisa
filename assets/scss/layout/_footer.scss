@@ -14,11 +14,21 @@
     }
   }
 
+  &_link {
+    @include media('xs') {
+      display: none;
+    }
+  }
+
   &_logo {
     @include media('md') {
       width: 100%;
       display: flex;
       justify-content: center;
+    }
+
+    @include media('xs') {
+      display: none;
     }
   }
 

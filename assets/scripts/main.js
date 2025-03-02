@@ -15,6 +15,41 @@ menu_close.addEventListener('click', () => {
 })
 // burger
 
+// form
+document.addEventListener("DOMContentLoaded", function () {
+  const tabs = document.querySelectorAll(".tab");
+  const forms = document.querySelectorAll(".form");
+  const submitButton = document.querySelector("#submit-button");
+  const initialForm = document.querySelector("#email-form"); // Asosiy forma
+  const successForm = document.querySelector("#success-message"); // Yangi blok
+
+  // Tabsni boshqarish
+  tabs.forEach(tab => {
+      tab.addEventListener("click", function () {
+          tabs.forEach(t => t.classList.remove("active"));
+          this.classList.add("active");
+
+          forms.forEach(form => form.classList.remove("active"));
+          document.getElementById(this.getAttribute("data-tab")).classList.add("active");
+      });
+  });
+
+  // Formani almashtirish
+  submitButton.addEventListener("click", function (e) {
+      e.preventDefault(); // Formani yuborishning oldini olamiz
+      initialForm.classList.remove("active");
+      successForm.classList.add("active");
+
+      // 3 soniyadan keyin formani qayta tiklash
+      setTimeout(() => {
+          successForm.classList.remove("active");
+          initialForm.classList.add("active");
+      }, 3000);
+  });
+});
+
+// form
+
 
 // select
 document.addEventListener("DOMContentLoaded", () => {

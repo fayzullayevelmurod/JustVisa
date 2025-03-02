@@ -1,3 +1,20 @@
+// burger
+let header_burger = document.querySelector('.header_burger');
+let header_link = document.querySelector('.header_link');
+let menu_close = document.querySelector('.menu_close');
+let body = document.querySelector('body');
+
+header_burger.addEventListener('click', () => {
+  header_link.classList.add('active');
+  body.classList.add('active');
+})
+
+menu_close.addEventListener('click', () => {
+  header_link.classList.remove('active')
+  body.classList.remove('active');
+})
+// burger
+
 
 // select
 document.addEventListener("DOMContentLoaded", () => {

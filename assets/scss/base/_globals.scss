@@ -29,6 +29,10 @@ body {
   font-display: swap;
 }
 
+body.active {
+  overflow: hidden;
+}
+
 input, textarea {
   outline: none;
   border: 0;

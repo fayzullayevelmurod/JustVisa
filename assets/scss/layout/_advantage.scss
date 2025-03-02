@@ -1,5 +1,120 @@
 // advantage
 .advantage {
-  
+  &_top {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 80px;
+
+    @include media('lg') {
+      flex-direction: column;
+      gap: 40px;
+      margin-bottom: 40px;
+    }
+
+    h3 {
+      font-weight: 800;
+      font-size: 50px;
+      line-height: 56px;
+      letter-spacing: -2%;
+      color: $color-black;
+      margin-bottom: 40px;
+
+      @include media('md') {
+        font-size: 26px;
+        line-height: 34px;
+        margin-bottom: 16px;
+        text-align: center;
+      }
+
+      span {
+        color: $color-red;
+      }
+    }
+
+    p {
+      font-weight: 400;
+      font-size: 28px;
+      line-height: 38px;
+      color: #8F8F8F;
+
+      @include media('md') {
+        font-size: 19px;
+        line-height: 24px;
+        text-align: center;
+      }
+    }
+  }
+
+  &_img {
+    display: flex;
+    flex-shrink: 0;
+    width: 380px;
+    height: 228px;
+
+    @include media('xs') {
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  &_cards {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+
+    @include media('md') {
+      gap: 10px;
+    }
+  }
+
+  &_card {
+    width: calc(33.333% - 14px);
+    border-radius: 24px;
+    background: #F2F8FF;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+
+    @include media('lg') {
+      width: calc(50% - 10px);
+    }
+
+    @include media('md') {
+      gap: 16px;
+      padding: 24px;
+    }
+
+    @include media('xs') {
+      width: calc(100%);
+    }
+
+    img {
+      width: 60px;
+      height: 60px;
+      flex-shrink: 0;
+
+      @include media('md') {
+        width: 44px;
+        height: 44px;
+      }
+    }
+
+    p {
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 26px;
+      text-align: center;
+      color: $color-black;
+
+      @include media('md') {
+        font-size: 12px;
+        line-height: 20px;
+      }
+    }
+  }
 }
 // advantage
